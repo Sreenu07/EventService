@@ -16,7 +16,7 @@ public class RabbitMQConsumer {
 	@Autowired
 	private EventsService eventsService;
 
-	@RabbitListener(queues = "${employeeevent.rabbitmq.queue")
+	@RabbitListener(queues = "${employeeevent.rabbitmq.queue}")
 	public void recievedMessage(com.events.beans.EmployeeEvent employeeEvent) {
 		System.out.println("Recieved Message From RabbitMQ: " + employeeEvent);
 		Events event = new Events();
