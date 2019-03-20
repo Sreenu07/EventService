@@ -18,7 +18,6 @@ public class RabbitMQConsumer {
 
 	@RabbitListener(queues = "${employeeevent.rabbitmq.queue}")
 	public void recievedMessage(com.events.beans.EmployeeEvent employeeEvent) {
-		System.out.println("Recieved Message From RabbitMQ: " + employeeEvent);
 		Events event = new Events();
 		event.setCreationTime(new Date());
 		event.setEmployeeId(employeeEvent.getUuid());
